@@ -38,7 +38,6 @@ call plug#begin('~/.config/nvim/bundle')
 		Plug 'https://github.com/shumphrey/fugitive-gitlab.vim'
 		Plug 'https://github.com/tpope/vim-rhubarb'
 	Plug 'https://github.com/itchyny/vim-gitbranch'
-	Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	Plug 'https://github.com/jelera/vim-javascript-syntax'
 	Plug 'https://github.com/matze/vim-meson'
 	Plug 'https://github.com/tpope/vim-surround'
