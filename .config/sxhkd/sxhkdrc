@@ -1,0 +1,60 @@
+# Basics
+super + Return
+	$TERMINAL
+super { , + shift}  +  f
+	{$BROWSER, ~/.script/dmenu-browser.sh}
+super + d
+	dmenu_run -i
+
+# Other applications
+super + r
+	$TERMINAL -n 'ncmpcpp' -e 'ncmpcpp'
+super + m
+	$TERMINAL -n 'neomutt' -e 'neomutt'
+super + g
+	gcolor2
+super + v
+	xclip -o -sel clip | xargs mpv
+
+# Scripts
+super + i
+	~/.script/dmenu-cpu.sh
+super + shift + i
+	~/.script/dmenu-fan.sh
+super + x
+	~/.script/dmenu-logout.sh
+Print
+	~/.script/dmenu-screenshot.sh
+super + t
+	~/.script/dmenu-messenger.sh
+super + u
+	~/.script/dmenu-unicode.sh
+super + shift + m
+	~/.config/mutt/etc/mailsync.sh
+
+# Audio - Vim bindings
+super + alt + {k,j}
+	pamixer -{i,d} 1; \
+	[ "$(ps ax | grep -c "pkill -RTMIN+1 dwmblocks")" -lt 4 ] && pkill -RTMIN+1 dwmblocks
+super + shift + {greater,less}
+	mpc {next,prev}; \
+	[ "$(ps ax | grep -c "pkill -RTMIN+1 dwmblocks")" -lt 4 ] && pkill -RTMIN+1 dwmblocks
+super + a
+	mpc toggle; \
+	[ "$(ps ax | grep -c "pkill -RTMIN+1 dwmblocks")" -lt 4 ] && pkill -RTMIN+1 dwmblocks
+
+# Audio - XF86 bindings
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	pamixer -{i,d,t} 1; \
+	[ "$(ps ax | grep -c "pkill -RTMIN+1 dwmblocks")" -lt 4 ] && pkill -RTMIN+1 dwmblocks
+XF86Audio{Next,Prev,Play,Pause,Stop}
+	mpc {next,prev,play,pause,stop}; \
+	[ "$(ps ax | grep -c "pkill -RTMIN+1 dwmblocks")" -lt 4 ] && pkill -RTMIN+1 dwmblocks
+
+# Backlight
+super + alt + {l,h}
+	light -{A,U} 1
+XF86MonBrightness{Up,Down}
+	light -{A,U} 1
+super + { , + shift} + n
+	redshift {-O 3500 -b 0.8,-x}

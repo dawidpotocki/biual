@@ -64,7 +64,6 @@ set $ws10 "10: "
 
 # Border & Title
 for_window [class="^.*"] border pixel 2, title_format " %title "
-smart_borders on
 
 # Gaps
 gaps inner 0
@@ -84,50 +83,11 @@ bindsym $Mod+Shift+o border none
 #  Autostart
 # ~~~~~~~~~~~
 
-# Remap buttons + keyboard layout
-exec --no-startup-id setxkbmap pl -option 'caps:ctrl_modifier'
-exec --no-startup-id xcape -e 'Caps_Lock=Escape'
-exec --no-startup-id xmodmap -e "keysym Menu = Super_R"
-exec --no-startup-id ~/.script/toggle-trackpad.sh disable
-
-# Load .Xresources configs
-exec_always --no-startup-id xrdb -load ~/.Xresources
-
-# Hide mouse cursor after X seconds
-exec --no-startup-id unclutter --timeout 5 --jitter 2 &
-
-# That nice bar
+# That shit bar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-# Prevent desktop idleness in full-screen mode
-exec --no-startup-id caffeine
-
-# X11 Compositor
-exec --no-startup-id picom
-
-# Notification daemon
-exec --no-startup-id dunst
-
-# Music daemon
-exec --no-startup-id mpd
-
-# Keyring for storing saved passwords
-exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
-
-# Polkit, required for authentication
-exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
-
-# Wallpaper (don't edit directly here, use ~/.script/wallpaper.sh)
-exec --no-startup-id xwallpaper --daemon --zoom ~/.config/wallpaper
-
-# Syncthing
-exec --no-startup-id syncthing -no-browser
 
 # Scratchpad
 exec --no-startup-id keepassxc -name keepassxc-sp
-
-# Networking
-exec --no-startup-id nm-applet
 
 
 # ~~~~~~~~~~~~~
@@ -144,61 +104,11 @@ bindsym $Mod+Shift+q kill
 bindsym $Mod+bracketright exec --no-startup-id .config/polybar/launch.sh
 bindsym $Mod+Shift+braceright exec --no-startup-id killall polybar
 
-# Launcher
-bindsym $Mod+d exec --no-startup-id dmenu_run -f -i
-bindsym $Mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -f -i"
-
 # Applications
-bindsym $Mod+Return exec --no-startup-id $TERMINAL
-bindsym $Mod+f exec --no-startup-id $BROWSER
-bindsym $Mod+Shift+f exec --no-startup-id ~/.script/dmenu-browser.sh
-bindsym $Mod+r exec --no-startup-id $TERMINAL -n 'ncmpcpp' -e 'ncmpcpp'
-bindsym $Mod+t exec --no-startup-id $HOME/.script/dmenu-messenger.sh
-bindsym $Mod+b exec --no-startup-id blueman-manager
 bindsym $Mod+p [instance="keepassxc-sp"] scratchpad show; [instance="keepassxc-sp"] move position center
-bindsym $Mod+u exec --no-startup-id exec ~/.script/dmenu-unicode.sh
-bindsym $Mod+m exec --no-startup-id $TERMINAL -n 'neomutt' -e 'neomutt'
-bindsym $Mod+Shift+m exec --no-startup-id ~/.config/mutt/etc/mailsync.sh
-bindsym $Mod+n exec --no-startup-id redshift -O 3500 -b 0.8
-bindsym $Mod+Shift+n exec --no-startup-id redshift -x
-bindsym $Mod+g exec --no-startup-id gcolor2
-bindsym $Mod+v exec --no-startup-id xclip -o -sel clip | xargs mpv
-
-# CPU/Fan speed
-bindsym $Mod+i exec --no-startup-id ~/.script/dmenu-cpu.sh
-bindsym $Mod+Shift+i exec --no-startup-id ~/.script/dmenu-fan.sh
-
-# Logout
-bindsym $Mod+x exec --no-startup-id ~/.script/dmenu-logout.sh
-
-# Screenshot
-bindsym Print exec --no-startup-id ~/.script/dmenu-screenshot.sh
 
 # Center floating app
 bindsym $Mod+s move position center
-
-# Audio - Vim bindings
-bindsym $Mod+$Moe+k exec --no-startup-id pamixer -i 1
-bindsym $Mod+$Moe+j exec --no-startup-id pamixer -d 1
-bindsym $Mod+Shift+greater exec --no-startup-id mpc next
-bindsym $Mod+Shift+less exec --no-startup-id mpc prev
-bindsym $Mod+a exec --no-startup-id mpc toggle
-# Audio - XF86 bindings
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 1
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 1
-bindsym XF86AudioMute  exec --no-startup-id pamixer -t
-bindsym XF86AudioPlay  exec --no-startup-id mpc play
-bindsym XF86AudioNext  exec --no-startup-id mpc next
-bindsym XF86AudioPrev  exec --no-startup-id mpc prev
-bindsym XF86AudioStop  exec --no-startup-id mpc stop
-bindsym XF86AudioPause exec --no-startup-id mpc pause
-
-# Backlight - Vim bindings
-bindsym $Mod+$Moe+l exec --no-startup-id light -A 1
-bindsym $Mod+$Moe+h exec --no-startup-id light -U 1
-# Backlight - XF86 bindings
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 1
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1
 
 # Fullscreen
 bindsym F11 fullscreen
