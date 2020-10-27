@@ -1,11 +1,12 @@
 #!/bin/sh
 
-messenger="$(printf "Riot (Tor :9050)\nRiot (Tor :9150)\nRiot\nKeybase\nSignal" | dmenu -i -p 'Messenger')"
+messenger="$(printf "Element\nElement (Tor :9050)\nElement (Tor :9150)\nTelegram\nDiscord\nSignal" | dmenu -i -p 'Messenger')"
 case "$messenger" in
-	"Riot (Tor :9050)") exe="riot-desktop --proxy-server=socks5://127.0.0.1:9050" app="Riot";;
-	"Riot (Tor :9150)") exe="riot-desktop --proxy-server=socks5://127.0.0.1:9150" app="Riot";;
-	"Riot") exe="riot-desktop" app="Riot";;
-	"Keybase") exe="run_keybase" app="Keybase";;
+	"Element (Tor :9050)") exe="element-desktop --proxy-server=socks5://127.0.0.1:9050" app="Element";;
+	"Element (Tor :9150)") exe="element-desktop --proxy-server=socks5://127.0.0.1:9150" app="Element";;
+	"Element") exe="element-desktop" app="Element";;
+	"Telegram") exe="telegram-desktop" app="Telegram";;
+	"Discord") exe="Discord" app="Discord";;
 	"Signal") exe="signal-desktop" app="Signal";;
 esac
 
