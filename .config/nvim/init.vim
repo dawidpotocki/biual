@@ -118,9 +118,6 @@ let g:lightline = {
 
 " Deoplete - autocompletion
 let g:deoplete#enable_at_startup = 1
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
 " deoplete-go
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 " UltiSnips
@@ -218,12 +215,13 @@ nnoremap <Leader>k gT
 nnoremap <Leader>j gt
 
 " Complete with <TAB>
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" :
+inoremap <silent><expr> <TAB>
+\ pumvisible() ? "\<C-n>" :
 \ <SID>check_back_space() ? "\<TAB>" :
-\ deoplete#mappings#manual_complete()
+\ deoplete#manual_complete()
 function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~? '\s'
+let col = col('.') - 1
+return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
 
 " Open Ranger, file manager
