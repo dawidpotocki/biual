@@ -36,10 +36,9 @@ alias vi='nvim'
 alias vim='nvim'
 alias nvi='nvim'
 alias please='sudo $(fc -ln -1)'
-alias woman='man'
 alias sudo='sudo '
 alias doas='doas '
-alias t='torsocks '
+alias t='torsocks'
 alias torsocks='torsocks '
 
 # cURL aliases

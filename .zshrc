@@ -29,7 +29,6 @@ compinit
 _comp_options+=(globdots)  # Include hidden files
 
 # Alias completion
-compdef woman=man
 compdef vi=nvim
 compdef vim=nvim
 compdef nvi=nvim
