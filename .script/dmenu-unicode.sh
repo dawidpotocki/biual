@@ -17,7 +17,7 @@ __DATA__
 🤔 thinking face; U+1F914
 ™ trade mark; U+2122
 ¯\_(ツ)_/¯ shruggie
-¯\\\_(ツ)_/¯ shruggie (markdown)
+¯\\\\\_(ツ)\_/¯ shruggie (markdown)
 
 😀 grinning face; U+1F600
 😃 grinning face with big eyes; U+1F603
