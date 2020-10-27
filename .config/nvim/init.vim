@@ -22,8 +22,7 @@ call plug#begin('~/.config/nvim/bundle')
 		Plug 'https://github.com/Shougo/neco-vim'
 		Plug 'https://github.com/Shougo/neoinclude.vim'
 	Plug 'https://github.com/editorconfig/editorconfig-vim'
-	Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-		Plug 'https://github.com/junegunn/fzf.vim'
+	Plug 'https://github.com/junegunn/fzf.vim'
 	Plug 'https://github.com/itchyny/lightline.vim'
 		Plug '~/.config/nvim/bundle/lightline-biual'
 	Plug 'https://github.com/vim-python/python-syntax'
