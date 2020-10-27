@@ -166,17 +166,15 @@ let g:polyglot_disabled = ['markdown']
 " Language-specific
 "===================
 
-augroup langindentation
-	autocmd Filetype c setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-	autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-	autocmd Filetype css setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-	autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-	autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-	autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-	autocmd Filetype scss setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-	autocmd Filetype php setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-	autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-augroup END
+autocmd Filetype css setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype jst setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype markdown setlocal conceallevel=0
+autocmd Filetype php setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype scss setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 
 "==============
