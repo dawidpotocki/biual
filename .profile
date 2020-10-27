@@ -11,9 +11,10 @@ export QT_STYLE_OVERRIDE=adwaita-dark
 export BROWSER="firefox"
 export TERMINAL="st"
 export EDITOR="nvim"
-export SSH_AUTH_SOCK
 
 # Start graphical server if window manager not already running
 if [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null; then
+	pkill ssh-agent
+	eval "$(ssh-agent)"
 	exec startx :0
 fi
