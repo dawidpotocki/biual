@@ -16,7 +16,6 @@ setopt prompt_subst
 PROMPT='%B%F{magenta}%n@%m%f%b in %B%F{cyan}%~%f%b $(git_status)
 %f%b%(?:$ :%F{red}$ )%f'
 setopt autocd
-zstyle ':completion:*' rehash true  # Look for new completions
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
@@ -27,6 +26,7 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)  # Include hidden files
+zstyle ':completion:*' rehash true  # Look for new completions
 
 # Alias completion
 compdef vi=nvim
