@@ -14,5 +14,6 @@ export EDITOR="nvim"
 export SSH_AUTH_SOCK
 
 # Start graphical server if window manager not already running
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx :0
-# [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x sway >/dev/null && exec sway
+if [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null; then
+	exec startx :0
+fi
