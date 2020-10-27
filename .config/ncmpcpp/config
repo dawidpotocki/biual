@@ -16,7 +16,7 @@ mpd_music_dir = ~/Music
 ##
 ## Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
 ## MPD clients (eg. ncmpc) also use that location.
-lyrics_directory = ~/Music/Lyrics
+lyrics_directory = ~/Music/_Lyrics
 
 ## Note: To enable spectrum frequency visualization you need to compile ncmpcpp
 ## with fftw3 support.
