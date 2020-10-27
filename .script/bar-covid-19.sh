@@ -26,4 +26,4 @@ else
 	download
 fi
 
-cat ~/.cache/covid-19
+[ "$(awk '{print $2}' < ~/.cache/covid-19)" = 0 ] || cat ~/.cache/covid-19

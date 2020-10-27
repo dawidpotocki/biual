@@ -163,7 +163,7 @@ format-paused =
 type = custom/script
 
 interval = 5
-exec = ~/.script/polybar-battery.sh
+exec = ~/.script/bar-battery.sh
 
 
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -211,7 +211,7 @@ format-connected-foreground = ${colors.foreground}
 type = custom/script
 
 interval = 1800
-exec = ~/.script/polybar-covid-19.sh
+exec = ~/.script/bar-covid-19.sh
 
 
 ;~~~~~~~~~~~
