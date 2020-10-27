@@ -41,7 +41,6 @@ call plug#begin('~/.config/nvim/bundle')
 	Plug 'https://github.com/matze/vim-meson'
 	Plug 'https://github.com/tpope/vim-surround'
 	Plug 'https://github.com/tpope/vim-repeat'
-	Plug 'https://github.com/reedes/vim-pencil'
 	Plug 'https://github.com/sheerun/vim-polyglot'
 	Plug 'https://github.com/tpope/vim-speeddating'
 	Plug 'https://github.com/cespare/vim-toml'
@@ -159,10 +158,6 @@ let g:python_highlight_all = 1
 " Fix https://github.com/junegunn/vim-plug/issues/502
 "let g:plug_threads = 1
 
-" vim-pencil
-let g:pencil#textwidth = 88
-let g:pencil#wrapModeDefault = 'soft'
-
 " vim-polygot
 let g:polyglot_disabled = ['markdown']
 
@@ -181,12 +176,6 @@ augroup langindentation
 	autocmd Filetype scss setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 	autocmd Filetype php setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 	autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-augroup END
-
-augroup pencil
-	autocmd!
-	autocmd FileType markdown call pencil#init({'wrap': 'soft', 'autoformat': 1})
-	autocmd FileType tex call pencil#init({'wrap': 'soft', 'autoformat': 1})
 augroup END
 
 
@@ -235,9 +224,6 @@ map <Leader>G :ALEGoToDefinition<CR>
 " Spell-check (English US and Polish)
 map <F6> :setlocal spell! spelllang=en_us<CR>
 map <F7> :setlocal spell! spelllang=pl<CR>
-
-" Toggle Pencil, wrapping text
-map <F9> :PencilToggle<CR>
 
 " fzf, fuzzy finder
 nnoremap <C-p> :Files<CR>
