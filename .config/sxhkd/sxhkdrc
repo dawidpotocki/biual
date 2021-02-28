@@ -2,7 +2,7 @@
 super + Return
 	$TERMINAL
 super { , + shift}  +  f
-	{$BROWSER, ~/.script/dmenu-browser.sh}
+	{$BROWSER, dmenu-browser}
 super + d
 	dmenu_run -i
 
@@ -18,17 +18,17 @@ super + v
 
 # Scripts
 super + i
-	~/.script/dmenu-cpu.sh
+	dmenu-cpu
 super + shift + i
-	~/.script/dmenu-fan.sh
+	dmenu-fan
 super + x
-	~/.script/dmenu-logout.sh
+	dmenu-logout
 Print
-	~/.script/dmenu-screenshot.sh
+	dmenu-screenshot
 super + t
-	~/.script/dmenu-messenger.sh
+	dmenu-messenger
 super + u
-	~/.script/dmenu-unicode.sh
+	dmenu-unicode
 super + shift + m
 	~/.config/mutt/etc/mailsync.sh
 

@@ -1,10 +1,10 @@
 ! special
 *.foreground: #cccccc
-*.background: #181b21
+*.background: #15191e
 
 ! black
-*.color0:     #181b21
-*.color8:     #252933
+*.color0:     #15191e
+*.color8:     #2c2c38
 
 ! red
 *.color1:     #cf5252
@@ -33,5 +33,3 @@
 ! white
 *.color7:     #cccccc
 *.color15:    #cccccc
-
-st.font: DejaVu Sans Mono:pixelsize=15:antialias=true:hintstyle=hintmedium

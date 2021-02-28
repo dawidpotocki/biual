@@ -8,26 +8,19 @@
 #
 
 
-# Xresources      var         value
-set_from_resource $bg         background
-set_from_resource $fg         foreground
-set_from_resource $black      color0
-set_from_resource $black_l    color8
-set_from_resource $red        color1
-set_from_resource $red_l      color9
-set_from_resource $green      color2
-set_from_resource $green_l    color10
-set_from_resource $yellow     color3
-set_from_resource $yellow_l   color11
-set_from_resource $blue	      color4
-set_from_resource $blue_l     color12
-set_from_resource $magenta    color5
-set_from_resource $red_l      color13
-set_from_resource $cyan       color6
-set_from_resource $cyan_l     color14
-set_from_resource $white      color7
-set_from_resource $white_l    color15
-set $transp                   #00000000
+#   var         value
+set $bg         #15191e
+set $fg         #cccccc
+set $black      #15191e
+set $black_l    #2c2c38
+set $red        #cf5252
+set $green      #92ad4a
+set $yellow     #c9895b
+set $blue	    #6f97b8
+set $magenta    #966bab
+set $cyan       #6fa69f
+set $white      #cccccc
+set $transp     #00000000
 
 # class                 bd          bg          txt         ind         child_bd
 client.focused          $black_l    $black_l    $magenta    $magenta    $magenta

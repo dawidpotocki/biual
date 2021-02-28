@@ -13,20 +13,18 @@
 ;~~~~~~~~~~~~~~~~~~~
 
 [colors]
-background = ${xrdb:background}
-background-alt = ${xrdb:color8}
-foreground = ${xrdb:color5}
-moderate = ${xrdb:color3}
-urgent = ${xrdb:color1}
+background = #15191e
+background-alt = #2c2c38
+foreground = #966bab
 
-black = ${xrdb:color0}
-red = ${xrdb:color1}
-green = ${xrdb:color2}
-yellow = ${xrdb:color3}
-blue = ${xrdb:color4}
-magenta = ${xrdb:color5}
-cyan = ${xrdb:color6}
-white = ${xrdb:color7}
+black = #15191e
+red = #cf5252
+green = #92ad4a
+yellow = #c9895b
+blue = #6f97b8
+magenta = #966bab
+cyan = #6fa69f
+white = #cccccc
 
 [settings]
 throttle-output = 5
@@ -163,7 +161,7 @@ format-paused =
 type = custom/script
 
 interval = 5
-exec = ~/.script/bar-battery.sh
+exec = bar-battery
 
 
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -186,9 +184,6 @@ ramp-signal-4 = 
 ramp-signal-5 = 
 animation-packetloss-0 = 
 animation-packetloss-1 = 
-animation-packetloss-0-foreground = ${colors.moderate}
-animation-packetloss-1-foreground = ${colors.urgent}
-animation-packetloss-framerate = 500
 
 
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -211,7 +206,7 @@ format-connected-foreground = ${colors.foreground}
 type = custom/script
 
 interval = 1800
-exec = ~/.script/bar-covid-19.sh
+exec = bar-covid-19
 
 
 ;~~~~~~~~~~~

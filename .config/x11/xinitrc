@@ -3,13 +3,12 @@
 # Input
 setxkbmap pl -option 'caps:ctrl_modifier'
 xcape -e 'Caps_Lock=Escape'
-xmodmap -e "keysym Menu = Super_R"
-~/.script/toggle-trackpad.sh disable
+toggle-trackpad disable
 sxhkd &
 
 # Xorg
-xwallpaper --daemon --zoom ~/.config/wallpaper
-xrdb -load ~/.Xresources
+xwallpaper --daemon --zoom "$XDG_DATA_HOME"/wallpaper
+xrdb -load "$XDG_CONFIG_HOME"/x11/Xresources
 unclutter --timeout 5 --jitter 2 &
 picom &
 
@@ -29,5 +28,6 @@ nm-applet &
 
 while :; do
 	pkill pulseaudio
-	i3
+	dwmblocks &
+	dwm
 done

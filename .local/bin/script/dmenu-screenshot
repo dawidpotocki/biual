@@ -4,7 +4,7 @@ TYPE="$(printf "Screen\nWindow/Area\n" | dmenu -i -p 'What do you want to screen
 [ -z "$TYPE" ] && exit
 SAVE="$(printf "No\nYes" | dmenu -i -p 'Do you want to copy to clipboard?')"
 [ -z "$SAVE" ] && exit
-TIME="$(printf "0.7\n5\n10\n15" | dmenu -i -p 'How many seconds you want to wait?')"
+TIME="$(printf "0.7\n5\n10\n15" | dmenu -i -p 'How many seconds do you want to wait?')"
 [ -z "$TIME" ] && exit
 
 case "$TYPE" in

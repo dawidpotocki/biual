@@ -18,13 +18,13 @@ PROMPT='%B%F{magenta}%n@%m%f%b in %B%F{cyan}%~%f%b $(git_status)
 setopt autocd
 HISTSIZE=1000000
 SAVEHIST=1000000
-HISTFILE=~/.zsh_history
+HISTFILE="$XDG_DATA_HOME/zsh_history"
 
 # Tab completion
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+compinit -d "$XDG_CACHE_HOME/zcompdump"
 _comp_options+=(globdots)  # Include hidden files
 zstyle ':completion:*' rehash true  # Look for new completions
 

@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+case $1 in
+	up)
+		git --git-dir="$HOME"/.config/biual-git/ --work-tree="$HOME" pull && git --git-dir="$HOME"/.config/biual-git/ --work-tree="$HOME" submodule init && git --git-dir="$HOME"/.config/biual-git/ --work-tree="$HOME" submodule update --recursive;;
+
+	*)
+		git --git-dir="$HOME"/.config/biual-git/ --work-tree="$HOME" "$@";;
+esac
