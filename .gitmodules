@@ -7,9 +7,3 @@
 [submodule ".config/mutt"]
 	path = .config/mutt
 	url = https://github.com/dawidpotocki/mutt-wizard.git
-[submodule ".config/tor-browser"]
-	path = .config/tor-browser
-	url = https://github.com/dawidpotocki/biual-torbrowser.git
-[submodule ".mozilla/firefox"]
-	path = .mozilla/firefox
-	url = https://github.com/dawidpotocki/biual-firefox.git
