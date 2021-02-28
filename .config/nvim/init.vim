@@ -59,7 +59,6 @@ set clipboard=unnamedplus
 set inccommand=nosplit
 set tabstop=4
 set shiftwidth=4
-set ignorecase
 set smartcase
 set undofile
 set background=light
@@ -147,9 +146,6 @@ let g:ale_fixers = {
 \   'yaml': ['prettier'],
 \}
 " let g:ale_lint_on_text_changed = 'never'
-
-" vim-go
-let g:go_fmt_autosave = 0 "We use ALE for formatting
 
 " Syntax highlighting
 let g:python_highlight_all = 1
