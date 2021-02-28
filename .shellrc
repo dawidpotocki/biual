@@ -14,19 +14,20 @@ source ~/.privaterc &> /dev/null
 stty stop undef
 stty start undef
 
-export LS_COLORS="no=00:fi=00:di=01;35:ln=01;36:pi=40;33:so=01;32:do=01;32:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;33:*.tar=01;36:*.tgz=01;36:*.svgz=01;32:*.arj=01;36:*.taz=01;36:*.lzh=01;36:*.lzma=01;36:*.zip=01;36:*.z=01;36:*.Z=01;36:*.dz=01;36:*.gz=01;36:*.bz2=01;36:*.tbz2=01;36:*.bz=01;36:*.tz=01;36:*.deb=01;36:*.rpm=01;36:*.jar=01;36:*.rar=01;36:*.ace=01;36:*.zoo=01;36:*.cpio=01;36:*.7z=01;36:*.rz=01;36:*.jpg=01;32:*.jpeg=01;32:*.gif=01;32:*.bmp=01;32:*.pbm=01;32:*.pgm=01;32:*.ppm=01;32:*.tga=01;32:*.xbm=01;32:*.xpm=01;32:*.tif=01;32:*.tiff=01;32:*.png=01;32:*.mng=01;32:*.pcx=01;32:*.mov=01;32:*.mpg=01;32:*.mpeg=01;32:*.m2v=01;32:*.mkv=01;32:*.ogm=01;32:*.mp4=01;32:*.m4v=01;32:*.mp4v=01;32:*.vob=01;32:*.qt=01;32:*.nuv=01;32:*.wmv=01;32:*.asf=01;32:*.rm=01;32:*.rmvb=01;32:*.flc=01;32:*.avi=01;32:*.fli=01;32:*.gl=01;32:*.dl=01;32:*.xcf=01;32:*.xwd=01;32:*.yuv=01;32:*.svg=01;32:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:"
+# LS colors
+export LS_COLORS="no=00:fi=00:di=01;35:ln=01;03;36:pi=00;34:so=00;34:do=00;34:bd=00;34:cd=00;34:or=01;03;31:mi=01;03;31:su=01;31:sg=01;31:tw=01;04;35:ow=01;04;35:st=01;04;35:ex=01;33:*.tar=00;36:*.tgz=00;36:*.arj=00;36:*.taz=00;36:*.lzh=00;36:*.lzma=00;36:*.zip=00;36:*.z=00;36:*.Z=00;36:*.dz=00;36:*.gz=00;36:*.bz2=00;36:*.tbz2=00;36:*.bz=00;36:*.tz=00;36:*.deb=00;36:*.rpm=00;36:*.jar=00;36:*.rar=00;36:*.ace=00;36:*.zoo=00;36:*.cpio=00;36:*.7z=00;36:*.rz=00;36:*.jpg=00;32:*.jpeg=00;32:*.gif=00;32:*.bmp=00;32:*.pbm=00;32:*.pgm=00;32:*.psd=00;32:*.ppm=00;32:*.tga=00;32:*.xcf=00;32:*.xbm=00;32:*.xpm=00;32:*.tif=00;32:*.tiff=00;32:*.png=00;32:*.mng=00;32:*.pcx=00;32:*.kdenlive=00;34:*.mov=00;34:*.mpg=00;34:*.mpeg=00;34:*.m2v=00;34:*.mkv=00;34:*.ogm=00;34:*.mp4=00;34:*.m4v=00;34:*.mp4v=00;34:*.vob=00;34:*.qt=00;34:*.nuv=00;34:*.webm=00;34:*.wmv=00;34:*.asf=00;34:*.rm=00;34:*.rmvb=00;34:*.flc=00;34:*.avi=00;34:*.fli=00;34:*.gl=00;34:*.dl=00;34:*.xcf=00;34:*.xwd=00;34:*.yuv=00;34:*.svg=00;34:*.svgz=00;33:*.aac=00;34:*.au=00;34:*.flac=00;34:*.mid=00;34:*.midi=00;34:*.mka=00;34:*.mp3=00;34:*.mpc=00;34:*.ogg=00;34:*.ra=00;34:*.wav=00;34:"
 
 # Less pager colors
-export LESS_TERMCAP_mb=$(tput setaf 4)
-export LESS_TERMCAP_md=$(tput setaf 4)
-export LESS_TERMCAP_me=$(tput sgr0)
-export LESS_TERMCAP_se=$(tput sgr0)
-export LESS_TERMCAP_so=$(tput setab 4 && tput setaf 0)
-export LESS_TERMCAP_ue=$(tput sgr0)
-export LESS_TERMCAP_us=$(tput setaf 2)
+export LESS_TERMCAP_mb="$(printf '\e[0;35m')"
+export LESS_TERMCAP_md="$(printf '\e[0;35m')"
+export LESS_TERMCAP_me="$(printf '\e[0m')"
+export LESS_TERMCAP_so="$(printf '\e[0;35m')"
+export LESS_TERMCAP_se="$(printf '\e[0m')"
+export LESS_TERMCAP_us="$(printf '\e[0;36m')"
+export LESS_TERMCAP_ue="$(printf '\e[0m')"
 
 # Sudo prompt
-export SUDO_PROMPT="$(printf "\033[1;31m")[sudo]$(printf "\033[0m") password for %p: "
+export SUDO_PROMPT="$(printf '\033[1;31m')[sudo]$(printf '\033[0m') password for %p: "
 
 # Aliases
 alias mw="~/.config/mutt/mutt-wizard.sh"
