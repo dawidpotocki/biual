@@ -42,20 +42,11 @@ autoload edit-command-line; zle -N edit-command-line  # Edit line in $EDITOR wit
 bindkey '^e' edit-command-line
 
 # Window title
-function xterm_title_precmd() {
-	print -Pn -- '\e]2;%n@%m %~\a'
-	[[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
-}
-function xterm_title_preexec() {
-	print -Pn -- '\e]2;%n@%m %~ %# ' && print -n -- "${(q)1}\a"
-	[[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
-}
-
-if [[ "$TERM" == (screen*|xterm*|st*|rxvt*|tmux*|putty*|konsole*|gnome*) ]]; then
-	autoload -Uz add-zsh-hook
-	add-zsh-hook -Uz precmd xterm_title_precmd
-	add-zsh-hook -Uz preexec xterm_title_preexec
-fi
+function xterm_title_precmd()  { print -Pn -- '\e]2;%n@%m %~\a' }
+function xterm_title_preexec() { print -Pn -- '\e]2;%n@%m %~ %# ' && print -n -- "${(q)1}\a" }
+autoload -Uz add-zsh-hook
+add-zsh-hook -Uz precmd xterm_title_precmd
+add-zsh-hook -Uz preexec xterm_title_preexec
 
 # Multi-dot cd (...)
 function expand-multiple-dots() {
