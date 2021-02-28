@@ -29,12 +29,6 @@ _comp_options+=(globdots)  # Include hidden files
 zstyle ':completion:*' rehash true  # Look for new completions
 
 # Alias completion
-compdef vi=nvim
-compdef vim=nvim
-compdef nvi=nvim
-compdef xbpi=xbps-install
-compdef xbpr=xbps-remove
-compdef xbpq=xbps-query
 compdef biual=git
 
 # Vim-style bindings
