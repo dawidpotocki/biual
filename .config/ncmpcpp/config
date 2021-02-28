@@ -227,7 +227,7 @@ header_text_scrolling = yes
 cyclic_scrolling = no
 lines_scrolled = 2
 
-lyrics_fetchers = tekstowo, lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, internet
+lyrics_fetchers = tekstowo, azlyrics, genius, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, internet
 follow_now_playing_lyrics = yes
 fetch_lyrics_for_current_song_in_background = no
 
