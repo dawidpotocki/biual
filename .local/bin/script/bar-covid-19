@@ -1,12 +1,16 @@
 #!/bin/sh
 
-# To change from World stats to your country, create ~/.config/covid-19/location
-# with a name of your country
+# To enable this script, create `$XDG_CONFIG_HOME/covid-19/location` and type
+# the name of your country inside.
+
+[ -z "$XDG_CONFIG_HOME" ] && XDG_CONFIG_HOME="$HOME/.config"
+[ -z "$XDG_CACHE_HOME" ]  && XDG_CACHE_HOME="$HOME/.cache"
 
 download() {
-	[ -z "$XDG_CONFIG_HOME" ] && XDG_CONFIG_HOME="$HOME/.config"
-	location="countries/$(cat "$XDG_CONFIG_HOME"/covid-19/location 2>/dev/null)" || location="all"
+	location="countries/$(cat "$XDG_CONFIG_HOME"/covid-19/location 2>/dev/null)"
+	[ "$location" = "countries/" ] && exit  # Quit if no file exists or empty
 	stats="$(curl -s "https://corona.lmao.ninja/v2/$location")"
+	[ -z "$stats" ] && exit
 	# Sometimes website doesn't work and will return Cloudflare HTML, which
 	# will cause `jq` to fail and show error, instead we are going to return
 	# and not replace saved stats on the disk
@@ -14,11 +18,16 @@ download() {
 	todaycases="$(echo "$stats" | jq '.todayCases')"
 	deaths="$(echo "$stats" | jq '.deaths')"
 	recovered="$(echo "$stats" | jq '.recovered')"
-	echo " $active  $todaycases  $deaths  $recovered" > ~/.cache/covid-19
+	echo " $active  $todaycases  $deaths  $recovered" > "$XDG_CACHE_HOME/covid-19"
 }
 
-if [ -f ~/.cache/covid-19 ]; then
-	modified="$(stat -c '%Y' ~/.cache/covid-19)"
+if [ "$1" = "refresh" ]; then
+	rm "$XDG_CACHE_HOME/covid-19" 2>/dev/null
+	pkill -RTMIN+19 dwmblocks
+fi
+
+if [ -f "$XDG_CACHE_HOME/covid-19" ]; then
+	modified="$(stat -c '%Y' "$XDG_CACHE_HOME/covid-19")"
 	current="$(date +%s)"
 	change=$((current - modified))
 	curl https://corona.lmao.ninja >/dev/null 2>&1 && [ $change -gt 3600 ] && download
@@ -26,4 +35,5 @@ else
 	download
 fi
 
-[ "$(awk '{print $2}' < ~/.cache/covid-19)" = 0 ] || cat ~/.cache/covid-19
+[ "$(awk '{print $2}' < "$XDG_CACHE_HOME/covid-19")" = 0 ] || cat "$XDG_CACHE_HOME/covid-19"
+pkill -RTMIN+19 dwmblocks
