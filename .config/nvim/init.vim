@@ -159,8 +159,11 @@ let g:python_highlight_all = 1
 " Language-specific
 "===================
 
+
 autocmd Filetype css setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype gitolite setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype htmldjango setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype jst setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
