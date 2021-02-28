@@ -1,25 +1,36 @@
 #!/bin/sh
 
+[ -z "$XDG_CACHE_HOME" ] && XDG_CACHE_HOME="$HOME/.cache"
+
 check_batteries() {
-	for battery in /sys/class/power_supply/BAT?; do
-		battery_capacity="$(cat "$battery"/capacity)"
-		batteries_total="$((batteries_total+battery_capacity))"
+       for battery in /sys/class/power_supply/BAT?; do
+               battery_capacity="$(cat "$battery"/capacity)"
+               batteries_total="$((batteries_total+battery_capacity))"
 
-		if [ "$battery_capacity" -gt 70 ]; then icon=""
-		elif [ "$battery_capacity" -gt 50 ]; then icon=""
-		elif [ "$battery_capacity" -gt 30 ]; then icon=""
-		else icon=""
-		fi
+               if [ "$battery_capacity" -gt 70 ]; then icon=""
+               elif [ "$battery_capacity" -gt 50 ]; then icon=""
+               elif [ "$battery_capacity" -gt 30 ]; then icon=""
+               else icon=""
+               fi
 
-		output="$output$icon $battery_capacity% "
-	done
+               output="$output $icon $battery_capacity%"
+       done
 
-	if [ "$(cat /sys/class/power_supply/AC/online)" = 1 ]; then printf " "
-	elif [ "$batteries_total" -lt 20 ]; then printf " "
-	fi
-
-	echo " $output"
+       if [ "$(cat /sys/class/power_supply/AC/online)" = 1 ]; then
+               printf " %s\n" "${output## }"
+               [ "$(cat "$XDG_CACHE_HOME"/battery)" = "charging" ] && return
+               echo "charging" > "$XDG_CACHE_HOME"/battery
+       elif [ "$batteries_total" -lt 20 ]; then
+               printf " %s\n" "${output## }"
+               [ "$(cat "$XDG_CACHE_HOME"/battery)" = "critical" ] && return
+               echo "critical" > "$XDG_CACHE_HOME"/battery
+               notify-send -u critical "Battery $batteries_total%" "Plug your computer"
+       else
+               printf "%s\n" "${output## }"
+               [ "$(cat "$XDG_CACHE_HOME"/battery)" = "normal" ] && return
+               echo "normal" > "$XDG_CACHE_HOME"/battery
+       fi
 }
 
 
-find /sys/class/power_supply/BAT? >/dev/null 2>&1 && check_batteries || printf " "
+find /sys/class/power_supply/BAT? >/dev/null 2>&1 && check_batteries || exit

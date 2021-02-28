@@ -52,7 +52,7 @@ monitor-strict = false
 
 modules-left   = i3
 modules-center =
-modules-right  = covid-19 | wireless-network | wired-network battery pulseaudio | mpd clock
+modules-right  = covid-19 | wireless-network | wired-network | battery | pulseaudio mpd | clock
 
 ;tray-position = right
 
