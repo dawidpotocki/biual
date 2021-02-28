@@ -93,14 +93,13 @@ enable-click = true
 fuzzy-match = true
 format = <label-state><label-mode>
 label-mode = %mode%
-label-mode-padding = 2
+label-mode-padding = 1
 
 label-focused = %index% %name%
-label-focused-padding = 2
+label-focused-padding = 1
 label-focused-background = ${colors.background-alt}
 label-focused-foreground = ${colors.foreground}
 label-focused-underline  = ${colors.foreground}
-label-focused-overline  = ${colors.foreground}
 
 label-unfocused = %index% %name%
 label-unfocused-padding = 1
@@ -150,7 +149,7 @@ ramp-volume-3 = ""
 [module/mpd]
 type = internal/mpd
 
-label-song = "%title% "
+label-song = " %title%"
 format-paused =
 
 
@@ -214,7 +213,7 @@ exec = bar-covid-19
 ;~~~~~~~~~~~
 [module/|]
 type = custom/text
-content = " "
+content = " | "
 
 
 ; vim:ft=dosini
