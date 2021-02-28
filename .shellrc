@@ -8,7 +8,7 @@
 
 
 # Source private/sensitive configs
-source ~/.privaterc &> /dev/null
+. "$HOME/.privaterc" >/dev/null 2>&1 /dev/null
 
 # Disable Ctrl-s Ctrl-q
 stty stop undef
@@ -56,4 +56,4 @@ f()   { find ./* -type f | fzf | xargs -r $EDITOR ;}
 cdf() { cd "$(find ./* -type d | fzf)" ;}
 raf() { ranger "$(find ./* -type d | fzf)" ;}
 
-# vim: filetype=zsh
+# vim: filetype=sh
