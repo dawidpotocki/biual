@@ -62,19 +62,19 @@ history = mod4+grave
 #
 
 [urgency_low]
-background  = "#181b21"
+background  = "#15191e"
 foreground  = "#8b6bab"
 frame_color = "#8b6bab"
 timeout = 5
 
 [urgency_normal]
-background  = "#181b21"
+background  = "#15191e"
 foreground  = "#966bab"
 frame_color = "#966bab"
 timeout = 5
 
 [urgency_critical]
-background  = "#181b21"
+background  = "#15191e"
 foreground  = "#cf5252"
 frame_color = "#cf5252"
 timeout = 15
