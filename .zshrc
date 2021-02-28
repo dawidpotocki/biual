@@ -10,6 +10,7 @@
 # Load shell-agnostic configs
 source ~/.shellrc
 
+
 # Basic stuff
 autoload -U colors && colors
 setopt prompt_subst
@@ -20,6 +21,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE="$XDG_DATA_HOME/zsh_history"
 
+
 # Tab completion
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -28,18 +30,22 @@ compinit -d "$XDG_CACHE_HOME/zcompdump"
 _comp_options+=(globdots)  # Include hidden files
 zstyle ':completion:*' rehash true  # Look for new completions
 
+
 # Alias completion
 compdef biual=git
+
 
 # Vim-style bindings
 bindkey -v
 bindkey -M viins '^?' backward-delete-char
 bindkey -M viins '^H' backward-delete-char
 
+
 # Other bindings
 bindkey '^R' history-incremental-search-backward
 autoload edit-command-line; zle -N edit-command-line  # Edit line in $EDITOR with C-e:
 bindkey '^e' edit-command-line
+
 
 # Window title
 function xterm_title_precmd()  { print -Pn -- '\e]2;%n@%m %~\a' }
@@ -47,6 +53,7 @@ function xterm_title_preexec() { print -Pn -- '\e]2;%n@%m %~ %# ' && print -n --
 autoload -Uz add-zsh-hook
 add-zsh-hook -Uz precmd xterm_title_precmd
 add-zsh-hook -Uz preexec xterm_title_preexec
+
 
 # Multi-dot cd (...)
 function expand-multiple-dots() {
@@ -68,6 +75,7 @@ zle -N expand-multiple-dots-then-expand-or-complete
 zle -N expand-multiple-dots-then-accept-line
 bindkey '^I' expand-multiple-dots-then-expand-or-complete
 bindkey '^M' expand-multiple-dots-then-accept-line
+
 
 # Show current branch and if there are any changes
 function git_status() {
