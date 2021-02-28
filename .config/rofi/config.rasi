@@ -1,0 +1,12 @@
+configuration {
+	font: "DejaVu Sans Mono 12";
+	bw: 2;
+	padding: 20;
+	line-padding: 2;
+	separator-style: "solid";
+	hide-scrollbar: true;
+	color-normal: "#15191e, #996bab, #15191e, #2c2c38, #996bab";
+	color-urgent: "#15191e, #996bab, #15191e, #2c2c38, #996bab";
+	color-active: "#15191e, #996bab, #15191e, #2c2c38, #996bab";
+	color-window: "#15191e, #996bab, #15191e";
+}
