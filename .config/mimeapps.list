@@ -1,20 +1,30 @@
 [Default Applications]
-x-scheme-handler/magnet=transmission-remote.desktop;
-x-scheme-handler/mailto=neomutt.desktop;
 text/plain=nvim.desktop;
+x-scheme-handler/mailto=neomutt.desktop;
 application/pdf=org.pwmt.zathura.desktop;
+
 image/png=sxiv.desktop;
 image/jpeg=sxiv.desktop;
 image/gif=sxiv.desktop;
+image/svg+xml=org.inkscape.Inkscape.desktop;
+
+x-scheme-handler/magnet=transmission-remote.desktop;
+application/x-bittorrent=transmission-gtk.desktop;
+
+text/html=firefox.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
-x-scheme-handler/ftp=firefox.desktop
-x-scheme-handler/chrome=firefox.desktop
-text/html=firefox.desktop
 application/x-extension-htm=firefox.desktop
 application/x-extension-html=firefox.desktop
 application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
-x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+
+
+[Added Associations]
+image/png=gimp.desktop;
+image/jpeg=gimp.desktop;
+image/gif=gimp.desktop;
+
+# vim: ft=dosini
