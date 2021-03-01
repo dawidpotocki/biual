@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "$(bar-pulseaudio) $(bar-mpd)" | sed 's/ $//g'

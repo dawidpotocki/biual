@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -z "$(mpc current)" ] && exit
+mpc | awk 'FNR==2{print $1}' | grep -q "\[paused\]" && exit
+
+mpc current --format=%title% | cut -c -22 | sed 's/\s*$//'

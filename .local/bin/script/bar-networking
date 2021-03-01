@@ -1,0 +1,20 @@
+#!/bin/sh
+
+data="$(nmcli -t -f GENERAL.TYPE,IP4.ADDRESS device show)"
+
+for conn_type in wifi ethernet; do
+	if   [ $conn_type = "wifi"     ]; then icon=""
+	elif [ $conn_type = "ethernet" ]; then icon=""
+	fi
+
+	conn_status="$(echo "$data" | grep -A 1 "GENERAL.TYPE:$conn_type$")"
+	if echo "$conn_status" | grep -q "IP4.ADDRESS"; then
+		export "$conn_type"_status="$(printf "%s" "$icon " && echo "$conn_status" |
+			grep "IP4.ADDRESS" | cut -d ":" -f 2 | cut -d "/" -f 1)"
+	elif [ $conn_type = "wifi" ]; then
+		wifi_status="$icon disconnected"
+	fi
+done
+
+# shellcheck disable=SC2154
+echo "$wifi_status $ethernet_status" | sed 's/  */ /g; s/\s*$//'

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+volume="$(pamixer --get-volume)"
+muted="$(pamixer --get-mute)"
+
+if [ "$muted" = "true" ]; then
+	printf " muted\n"
+elif [ "$volume" -lt 30 ]; then
+	printf " %s%%\n" "$volume"
+else
+	printf " %s%%\n" "$volume"
+fi
