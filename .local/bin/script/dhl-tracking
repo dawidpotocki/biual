@@ -1,0 +1,30 @@
+#!/bin/sh
+
+[ -z "$1" ] && cat <<-EOF && exit 1
+	Usage:
+	  dhl-tracking [TRACKING NUMBER]
+EOF
+
+data="$(curl -s "https://api-eu.dhl.com/track/shipments?trackingNumber=$1&" \
+	-H "DHL-API-Key: demo-key")"  # Welp, it works
+
+# Because jq is dumb, even if such name can't be found, it will return newline
+# and a tab(?) anyway, so we have to do this nonsense.
+error="$(echo "$data" | jq -er '.detail')" && echo "$error" && exit 1
+
+estimated="$(echo "$data" | jq -r '.shipments[0].estimatedTimeOfDelivery')"
+estimated_remark="$(echo "$data" | jq -r '.shipments[0].estimatedTimeOfDeliveryRemark')"
+status_timestamp="$(echo "$data" | jq -r '.shipments[0].status.timestamp')"
+status_location="$(echo "$data" | jq -r '.shipments[0].status.location.address.addressLocality')"
+status_description="$(echo "$data" | jq -r '.shipments[0].status.description')"
+status_remark="$(echo "$data" | jq -r '.shipments[0].status.remark')"
+status_nextsteps="$(echo "$data" | jq -r '.shipments[0].status.nextSteps')"
+
+echo "DHL ($1)"
+[ "$estimated" = null ] || printf " %s -" "$estimated"
+[ "$estimated_remark" = null ] || printf " %s\n\n" "$estimated_remark"
+echo " $status_timestamp":
+echo " $status_location"
+echo " $status_description"
+[ "$status_remark" = null ] || printf "\n\n %s" "$status_remark"
+[ "$status_nextsteps" = null ] || printf "\n %s\n" "$status_nextsteps"
