@@ -36,4 +36,4 @@ else
 fi
 
 [ "$(awk '{print $2}' < "$XDG_CACHE_HOME/covid-19")" = 0 ] || cat "$XDG_CACHE_HOME/covid-19"
-pkill -RTMIN+19 dwmblocks
+[ "$1" = "refresh" ] && pkill -RTMIN+19 dwmblocks
