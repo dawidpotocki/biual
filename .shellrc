@@ -24,7 +24,7 @@ export LS_COLORS="no=00:fi=00:di=01;35:ln=01;03;36:pi=00;34:so=00;34:do=00;34:bd
 export LESS_TERMCAP_mb="$(printf '\e[0;35m')"
 export LESS_TERMCAP_md="$(printf '\e[0;35m')"
 export LESS_TERMCAP_me="$(printf '\e[0m')"
-export LESS_TERMCAP_so="$(printf '\e[0;35m')"
+export LESS_TERMCAP_so="$(printf '\e[0;30;45m')"
 export LESS_TERMCAP_se="$(printf '\e[0m')"
 export LESS_TERMCAP_us="$(printf '\e[0;36m')"
 export LESS_TERMCAP_ue="$(printf '\e[0m')"
