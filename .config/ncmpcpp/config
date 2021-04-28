@@ -22,7 +22,7 @@ lyrics_directory = ~/Music/_Lyrics
 ## with fftw3 support.
 ## Available values: spectrum, wave, wave_filled, ellipse.
 visualizer_type = spectrum
-visualizer_color = blue, green, magenta
+visualizer_color = 9
 
 ## Time of inactivity (in seconds) after highlighting will be disabled
 ## (0 = always on).
