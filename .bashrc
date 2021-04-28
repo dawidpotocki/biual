@@ -21,4 +21,4 @@ bind C-l:clear-screen
 
 
 # Bash prompt
-export PS1="\033[1;34m\u@\h \033[0min \033[1;32m\w\n\033[0m\$ "
+export PS1="\[\e[1;34m\]\u@\h \[\e[0min\] \[\e[1;32m\]\w\n\[\e[0m\]\$ "
