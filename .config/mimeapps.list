@@ -26,5 +26,6 @@ application/x-extension-xht=firefox.desktop
 image/png=gimp.desktop;
 image/jpeg=gimp.desktop;
 image/gif=gimp.desktop;
+image/svg+xml=gimp.desktop;
 
 # vim: ft=dosini
