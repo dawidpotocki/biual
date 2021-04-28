@@ -15,7 +15,7 @@ export PIPX_HOME="$XDG_DATA_HOME/pipx"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
-export PATH="$PATH:$HOME/.local/bin/script:$HOME/.local/bin:$XDG_DATA_HOME/npm/bin:$CARGO_HOME/bin:$GOPATH/bin:$XDG_CONFIG_HOME/composer/vendor/bin:$XDG_DATA_HOME/gem/bin"
+export PATH="$PATH:$HOME/.local/bin/script:$HOME/.local/bin:$XDG_DATA_HOME/npm/bin:$CARGO_HOME/bin:$GOPATH/bin:$XDG_CONFIG_HOME/composer/vendor/bin:$GEM_HOME/bin"
 
 # Default programs
 export BROWSER="firefox"
