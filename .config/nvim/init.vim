@@ -16,7 +16,6 @@ call plug#begin('~/.config/nvim/bundle')
 		Plug 'https://github.com/Shougo/deoplete-clangx'
 		Plug 'https://github.com/deoplete-plugins/deoplete-go', { 'do': 'make'}
 		Plug 'https://github.com/deoplete-plugins/deoplete-jedi'
-		Plug 'https://github.com/padawan-php/deoplete-padawan', { 'do': 'composer install' }
 		Plug 'https://github.com/carlitux/deoplete-ternjs'
 		Plug 'https://github.com/deoplete-plugins/deoplete-zsh'
 		Plug 'https://github.com/Shougo/neco-vim'
